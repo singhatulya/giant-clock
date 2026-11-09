@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clock</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <p id="time">time</p>
+        <p id="date">date</p>
+        <button>⚙</button>
+    </body>
+    <style>
+        
+        #time{
+            font-size: 700%;
+            text-align: center;
+            margin-top: 10%;
+            color: white;
+            text-shadow: none;
+            transition: 0.5s ease;
+            
+        }
+        #time:hover{
+            text-shadow: 30%, white;
+            text-shadow: white;
+            font-size: 750%;
+            
+        }
+        #seconds{
+            font-size: 80%;
+            margin-left:3%;
+            color: rgb(200,200,200);
+        }
+        body{
+            background-image: linear-gradient(rgb(0,0,0),rgb(65,60,60));
+            margin: 5%;
+        }
+        button{
+            position: fixed;
+            transform: rotateX('angle');
+            background-color: black;
+            border-color: white;
+            border-radius: 5px;
+
+        }
+    </style>
+    
+    <script>
+        function updateClock() {
+            const now = new Date();
+
+            let hours = String(now.getHours()).padStart(2, "0");
+            let minutes = String(now.getMinutes()).padStart(2, "0");
+            let seconds = String(now.getSeconds()).padStart(2, "0");
+
+            document.getElementById("time").innerHTML =
+                `${hours}:${minutes}<span id="seconds">${seconds}</span>`;
+
+            document.getElementById("date").textContent =
+                now.toDateString();
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</html>
