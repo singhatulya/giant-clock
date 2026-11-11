@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
         <title>Clock</title>
         <meta charset="utf-8">
     </head>
@@ -8,9 +11,12 @@
         <p id="time">time</p>
         <p id="date">date</p>
         <button>⚙</button>
+        <div id="settings">
+            <h2>Background Image</h2>
+            <buttton id="stars">Stars</buttton>
+        </div>
     </body>
     <style>
-        
         #time{
             font-size: 700%;
             text-align: center;
@@ -18,6 +24,9 @@
             color: white;
             text-shadow: none;
             transition: 0.5s ease;
+            background-color: rgba(0,0,0,0.2);
+            padding:2px;
+            font-family: Montserrat;
             
         }
         #time:hover{
@@ -26,16 +35,23 @@
             font-size: 750%;
             
         }
+        #date{
+            color: white;
+            text-align: center;
+            font-size: 200%;
+        }
         #seconds{
             font-size: 80%;
             margin-left:3%;
             color: rgb(200,200,200);
         }
         body{
-            background-image: linear-gradient(rgb(0,0,0),rgb(65,60,60));
-            margin: 5%;
+            background-image: url("stars.png");
+            background-size:auto;
+            background-position: center;
+            background-repeat:repeat;
         }
-        button{
+        buttons{
             position: fixed;
             transform: rotateX('angle');
             background-color: black;
