@@ -4,16 +4,21 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-        <title>Clock</title>
+        <title>Giant Clock</title>
         <meta charset="utf-8">
     </head>
     <body>
         <p id="time">time</p>
         <p id="date">date</p>
-        <button>⚙</button>
+        <button id="setting">⚙</button>
         <div id="settings">
             <h2>Background Image</h2>
-            <buttton id="stars">Stars</buttton>
+            <button id="stars">Stars</button>
+            <button id="sea">Sea</button>
+            <h2>Font</h2>
+            <button id="Montserrat">Montserrat</button>
+            <button id="Oswald">Oswald</button>
+            <button id="Pixelify Sans">Pixelify Sans</button>
         </div>
     </body>
     <style>
@@ -51,13 +56,24 @@
             background-position: center;
             background-repeat:repeat;
         }
-        buttons{
-            position: fixed;
-            transform: rotateX('angle');
+        #setting{
             background-color: black;
             border-color: white;
             border-radius: 5px;
+            color: white;
 
+        }
+        #settings{
+            background-color: rgba(0,0,0,0.4);
+            color: rgb(240,240,240);
+            padding: 4%;
+            border-radius: 3px;
+            transition: 0.3s ease;
+            position: fixed;
+
+        }
+        .hidden{
+            display: none;
         }
     </style>
     
@@ -75,6 +91,12 @@
             document.getElementById("date").textContent =
                 now.toDateString();
         }
+
+        document.getElementById('setting').addEventListener("click", function(){
+            document.getElementById("settings").classList.toggle("hidden");
+        });
+
+        
 
         updateClock();
         setInterval(updateClock, 1000);
