@@ -116,6 +116,24 @@
         document.getElementById('sea').addEventListener("click",function(){
             document.body.style.backgroundImage="url('sea.jpg')";
         });
+        document.getElementById('MontserratC').addEventListener("click",function(){
+            document.getElementById('time').style.fontFamily="Montserrat";
+        });
+        document.getElementById("OswaldC").addEventListener("click",function(){
+            document.getElementById("time").style.fontFamily="Oswald";
+        });
+        document.getElementById("PixelifyC").addEventListener("click", function(){
+            document.getElementById('time').style.fontFamily="Pixelify Sans";
+        });
+        document.getElementById("montT").addEventListener("click", function(){
+            document.getElementById('date').style.fontFamily="Montserrat";
+        });
+        document.getElementById('oswaldT').addEventListener("click", function(){
+            document.getElementById('date').style.fontFamily="Oswald";
+        });
+        document.getElementById('pixelT').addEventListener("click", function(){
+            document.getElementById('date').style.fontFamily="Pixelify Sans";
+        });
 
         updateClock();
         setInterval(updateClock, 1000);
