@@ -13,12 +13,16 @@
         <button id="setting">⚙</button>
         <div id="settings">
             <h2>Background Image</h2>
-            <button id="stars">Stars</button>
-            <button id="sea">Sea</button>
-            <h2>Font</h2>
-            <button id="Montserrat">Montserrat</button>
-            <button id="Oswald">Oswald</button>
-            <button id="Pixelify Sans">Pixelify Sans</button>
+            <button id="stars" class="S">Stars</button>
+            <button id="sea" class="S">Sea</button>
+            <h2>Font of Clock</h2>
+            <button id="MontserratC" class="S">Montserrat</button>
+            <button id="OswaldC" class="S">Oswald</button>
+            <button id="PixelifyC" class="S">Pixelify Sans</button>
+            <h2>Font of Date</h2>
+            <button id="montT" class="S">Montserrat</button>
+            <button id="oswaldT" class="S">Oswald</button>
+            <button id="pixelT" class="S">Pixelify Sans</button>
         </div>
     </body>
     <style>
@@ -27,16 +31,15 @@
             text-align: center;
             margin-top: 10%;
             color: white;
-            text-shadow: none;
+            text-shadow: 0px 0px 15px rgb(73, 73, 73);
             transition: 0.5s ease;
-            background-color: rgba(0,0,0,0.2);
             padding:2px;
             font-family: Montserrat;
-            
+            margin-bottom: 1px;
         }
         #time:hover{
             text-shadow: 30%, white;
-            text-shadow: white;
+            text-shadow: 0px 0px 15px rgb(6, 205, 255);
             font-size: 750%;
             
         }
@@ -44,6 +47,8 @@
             color: white;
             text-align: center;
             font-size: 200%;
+            font-family: Oswald;
+            text-shadow: 0px 0px 5px rgb(10,10,10);
         }
         #seconds{
             font-size: 80%;
@@ -51,13 +56,16 @@
             color: rgb(200,200,200);
         }
         body{
+            height:100%;
             background-image: url("stars.png");
-            background-size:auto;
+            background-size:cover;
             background-position: center;
-            background-repeat:repeat;
+            background-repeat:no-repeat;
+            min-height: 100vh;
+            overflow: hidden;
         }
         #setting{
-            background-color: black;
+            background-color: rgba(0,0,0,0.2);
             border-color: white;
             border-radius: 5px;
             color: white;
@@ -66,14 +74,19 @@
         #settings{
             background-color: rgba(0,0,0,0.4);
             color: rgb(240,240,240);
-            padding: 4%;
-            border-radius: 3px;
+            padding: 2%;
+            border-radius: 10px;
             transition: 0.3s ease;
             position: fixed;
 
         }
         .hidden{
             display: none;
+        }
+        .S, h2{
+            font-weight:500;
+            outline-width: 0;
+            font-family: Oswald;
         }
     </style>
     
@@ -96,7 +109,13 @@
             document.getElementById("settings").classList.toggle("hidden");
         });
 
-        
+        document.getElementById('stars').addEventListener("click",function(){
+            document.body.style.backgroundImage="url('stars.png')";
+        });
+
+        document.getElementById('sea').addEventListener("click",function(){
+            document.body.style.backgroundImage="url('sea.jpg')";
+        });
 
         updateClock();
         setInterval(updateClock, 1000);
