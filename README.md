@@ -7,7 +7,8 @@ A simple customizable clock made using HTML, CSS and JS
 This is a Giant clock made using HTML, CSS and JS. It also has a settings option to change font and background.
 
 ### Screenshots
-Atleast one relevant screenshot of the program
+![Project Screenshot](screen "screenshot")
+
 
 ## Getting Started
 
