@@ -5,6 +5,13 @@ A simple customizable clock made using HTML, CSS and JS
 ## Description
 
 This is a Giant clock made using HTML, CSS and JS. It also has a settings option to change font and background.
+Supported Fonts-
+* Montserrat
+* Oswald
+* Pixelify Sans
+  
+You can even set different fonts for date and time. 
+
 
 ### Screenshots
 ![Project Screenshot](screen "screenshot")
