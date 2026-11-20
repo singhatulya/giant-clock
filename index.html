@@ -135,6 +135,30 @@
             document.getElementById('date').style.fontFamily="Pixelify Sans";
         });
 
+        let upCount = 0;
+        let secretMode = false;
+
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "ArrowUp") {
+                upCount++;
+
+                if (upCount === 3) {
+                    secretMode = !secretMode;
+
+                    if (secretMode) {
+                        document.getElementById("time").textContent = "HI! try this Again";
+                        document.getElementById("date").textContent = "😎";
+                    } else {
+                        updateClock();
+                    }
+
+                    upCount = 0;
+                }
+            } else {
+                upCount = 0;
+            }
+        });
+
         updateClock();
         setInterval(updateClock, 1000);
     </script>
